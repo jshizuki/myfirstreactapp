@@ -12,7 +12,7 @@ function Button() {
   }
 
   return (
-    <div className="container">
+    <div>
       <div className="button-container">
         <p>How many times have you clicked?</p>
         <MuiButton variant="contained" color="primary" onClick={handleClick}>{count} times</MuiButton>
