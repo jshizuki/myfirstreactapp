@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./EditProfile.css";
 import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 
 export default function EditProfile() {
   const [profile, setProfile] = useState({});
@@ -15,6 +16,8 @@ export default function EditProfile() {
   };
 
   const handleSubmit = (e) => {
+    // prevent the default form submission behavior, which includes appending the form data as query parameters in the URL.
+    e.preventDefault();
     // 2nd and 3rd argument control how the object is displayed for readability
     alert(JSON.stringify(profile, "", 2));
   };
@@ -49,6 +52,9 @@ export default function EditProfile() {
           className="input"
           id="filled-basic"
           label="Birthday"
+          InputLabelProps={{
+            shrink: true,
+          }}
           variant="filled"
           onChange={handleChange}
           type="date"
@@ -66,7 +72,9 @@ export default function EditProfile() {
           value={profile.password}
         />
         <br />
-        <button>Submit</button>
+        <Button className="button" size="small" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );
