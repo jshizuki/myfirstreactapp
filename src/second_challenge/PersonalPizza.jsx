@@ -15,6 +15,7 @@ export default function PersonalPizza() {
       })
     } else {
       setSelected(prev => {
+        // Replacing current array with a new one with the updated element
         return [clickedItem, ...prev]
       })
     }
@@ -22,9 +23,9 @@ export default function PersonalPizza() {
 
   return (
     <div className="pizza-container">
-      <p>Second challenge - updating an array in a state</p>
-      {options.map(option => {
-        return <MuiButton variant="contained" color="secondary" className="button" value={option} onClick={toggleTopping}>{option}</MuiButton>
+      <p>Second challenge - updating an <b>array</b> in a state</p>
+      {options.map((option, index) => {
+        return <MuiButton variant="contained" color="secondary" className="button" key={index} value={option} onClick={toggleTopping}>{option}</MuiButton>
       })}
       <p>Order a {selected.join(", ")} pizza</p>
     </div>
