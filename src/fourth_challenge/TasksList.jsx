@@ -6,8 +6,8 @@ export default function TasksList({ allTasks, handleDelete }) {
       <ul>
         {allTasks.map((taskObject, id) => {
           return (
-            <div>
-              <li key={id}>
+            <div key={`task_${id}`}>
+              <li>
                 <p>{taskObject.title}</p>
                 <button onClick={() => handleDelete(id)}>X</button>
               </li>

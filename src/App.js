@@ -14,7 +14,7 @@ import NewTask from "./fourth_challenge/NewTask";
 import TasksList from "./fourth_challenge/TasksList";
 
 function App() {
-  const [newTask, setNewTask] = useState({});
+  const [newTask, setNewTask] = useState({title: "", description: ""});
 
   const handleChange = ({ target }) => {
     // Add new task into the object
